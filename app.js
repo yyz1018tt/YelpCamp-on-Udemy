@@ -16,9 +16,10 @@ var express = require('express'),
 	campgroundRoutes = require('./routes/campgrounds'),
 	indexRoutes = require('./routes/index');
 
+var url = process.env.DATABASE || 'mongodb://localhost/yelp_camp';
 // mongoose.connect('mongodb://localhost/yelp_camp');
 mongoose
-	.connect('mongodb+srv://yyz:Y19961018y@cluster0-mfjxu.mongodb.net/test?retryWrites=true&w=majority', {
+	.connect(url, {
 		useNewUrlParser: true,
 		useCreateIndex: true
 	})
